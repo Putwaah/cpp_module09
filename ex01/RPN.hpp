@@ -6,13 +6,19 @@
 #include <sstream>
 #include <string>
 #include <stack>
+#include <cctype>
+
 
 class Rpn{
-    public:
+	private:
+		std::stack<double> _numbers;
+    
+	public:
         Rpn();
-        ~Rpn();
+    	Rpn(std::stack<double> number);
+		~Rpn();
         Rpn(const Rpn& copy);
         Rpn& operator=(const Rpn& copy);
-        int calculate(std::string input);
+        void calculate(std::string input);
 };
 #endif
